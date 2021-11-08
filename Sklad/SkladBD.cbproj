@@ -1,0 +1,214 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{AF1B47D2-5094-4EBB-8408-35B9D117B604}</ProjectGuid>
+			<ProjectType>CppVCLApplication</ProjectType>
+			<MainSource>SkladBD.cpp</MainSource>
+			<Config Condition="'$(Config)'==''">Release</Config>
+			<ProjectVersion>12.0</ProjectVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<BCC_InstructionSet>6</BCC_InstructionSet>
+			<Defines>NO_STRICT;$(Defines)</Defines>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<LinkPackageStatics>vcl.lib;rtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;teedb.lib;tee.lib;vclx.lib;bdertl.lib;vcldbx.lib;TeeUI.lib</LinkPackageStatics>
+			<PackageImports>vcl.bpi;rtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclx.bpi;bdertl.bpi;vcldbx.bpi;ibxpress.bpi;dsnap.bpi;dsnap.bpi;dsnapcon.bpi;teeui.bpi;teedb.bpi;tee.bpi;dss.bpi;dsnapcon.bpi;bcbsmp.bpi;vclie.bpi;xmlrtl.bpi;inet.bpi;inetdbbde.bpi;inetdbxpress.bpi;inetdb.bpi;webdsnap.bpi;bcbie.bpi;websnap.bpi;soaprtl.bpi;dbexpress.bpi;dbxcds.bpi;indycore.bpi;indysystem.bpi;bcboffice2k.bpi</PackageImports>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<ILINK_AppType>Windows</ILINK_AppType>
+			<BRCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(BRCC_IncludePath)</BRCC_IncludePath>
+			<BCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(BCC_IncludePath)</BCC_IncludePath>
+			<DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
+			<TASM_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(TASM_IncludePath)</TASM_IncludePath>
+			<FinalOutputDir>.</FinalOutputDir>
+			<BCC_GenerateWindowsApp>true</BCC_GenerateWindowsApp>
+			<OutputExt>exe</OutputExt>
+			<AllPackageLibs>vcl.lib;rtl.lib;dbrtl.lib;adortl.lib;vcldb.lib;teedb.lib;tee.lib;vclx.lib;bdertl.lib;vcldbx.lib;TeeUI.lib</AllPackageLibs>
+			<BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+			<ILINK_LibraryPath>$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<Multithreaded>true</Multithreaded>
+			<DCC_AdditionalSwitches> -M</DCC_AdditionalSwitches>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_UserSuppliedOptions> -Vx -r- -k -Ve -k</BCC_UserSuppliedOptions>
+			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+			<IntermediateOutputDir>Debug_Build</IntermediateOutputDir>
+			<DCC_Define>DEBUG;$(DCC_Define);$(DCC_Define)</DCC_Define>
+			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<DCC_AdditionalSwitches> -M -V</DCC_AdditionalSwitches>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<FinalOutputDir>Release_Build\</FinalOutputDir>
+			<_TCHARMapping>wchar_t</_TCHARMapping>
+			<ILINK_StackCommitSize>0x00100000</ILINK_StackCommitSize>
+			<BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+			<BCC_UserSuppliedOptions> -Vx -r- -k -Ve -r</BCC_UserSuppliedOptions>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<IntermediateOutputDir>Release_Build</IntermediateOutputDir>
+			<DCC_AdditionalSwitches> -M -$O+</DCC_AdditionalSwitches>
+			<TASM_Debugging>None</TASM_Debugging>
+			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="SQL.cpp">
+				<BuildOrder>23</BuildOrder>
+				<Form>fmSQL</Form>
+				<DependentOn>SQL.h</DependentOn>
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Report.cpp">
+				<BuildOrder>17</BuildOrder>
+				<Form>fmReport</Form>
+				<DependentOn>Report.h</DependentOn>
+				<BuildOrder>1</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Tovari.cpp">
+				<BuildOrder>3</BuildOrder>
+				<Form>fmTovari</Form>
+				<DependentOn>Tovari.h</DependentOn>
+				<BuildOrder>26</BuildOrder>
+			</CppCompile>
+			<None Include="ModelSupport_SkladBD\default.txaPackage"/>
+			<CppCompile Include="Unit1.cpp">
+				<BuildOrder>29</BuildOrder>
+				<Form>fmMain</Form>
+				<DependentOn>Unit1.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="SkladBD.cpp">
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="SkladBD.res">
+				<BuildOrder>6</BuildOrder>
+				<BuildOrder>2</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="DM.cpp">
+				<Form>DMMain</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>DM.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Nakl.cpp">
+				<BuildOrder>4</BuildOrder>
+				<Form>fmNakl</Form>
+				<DependentOn>Nakl.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="List.cpp">
+				<BuildOrder>7</BuildOrder>
+				<Form>fmList</Form>
+				<DependentOn>List.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<FormResources Include="SQL.dfm"/>
+			<FormResources Include="Report.dfm"/>
+			<FormResources Include="Tovari.dfm"/>
+			<FormResources Include="Unit1.dfm"/>
+			<FormResources Include="DM.dfm"/>
+			<FormResources Include="Nakl.dfm"/>
+			<FormResources Include="List.dfm"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RunParams"/>
+						<Parameters Name="Launcher"/>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="DebugCWD"/>
+						<Parameters Name="HostApplication"/>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="Debug Symbols Search Path"/>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<Compiler>
+						<Compiler Name="ShowInfoMsgs">0</Compiler>
+						<Compiler Name="LinkDebugVcl">0</Compiler>
+						<Compiler Name="LinkCGLIB">0</Compiler>
+					</Compiler>
+					<CORBA>
+						<CORBA Name="AddServerUnit">1</CORBA>
+						<CORBA Name="AddClientUnit">1</CORBA>
+						<CORBA Name="PrecompiledHeaders">1</CORBA>
+					</CORBA>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<Source>
+						<Source Name="MainSource">SkladBD.cpp</Source>
+					</Source>
+				</CPlusPlusBuilder.Personality>
+				<ModelSupport>True</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
