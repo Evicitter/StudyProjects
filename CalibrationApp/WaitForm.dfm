@@ -1,0 +1,41 @@
+object WaitProgress: TWaitProgress
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Wait'
+  ClientHeight = 96
+  ClientWidth = 297
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnHide = FormHide
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Animate1: TAnimate
+    Left = 0
+    Top = 0
+    Width = 297
+    Height = 57
+    Align = alTop
+    AutoSize = False
+    StartFrame = 2
+    StopFrame = 116
+    Transparent = False
+  end
+  object ProgressBar1: TProgressBar
+    Left = 0
+    Top = 63
+    Width = 297
+    Height = 33
+    Align = alBottom
+    Position = 50
+    Smooth = True
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,3 @@
+WAVI AVI "loadicon.avi"
+BM_Read BITMAP "usbpendrive_mount.bmp"
+BM_Idle BITMAP "usbpendrive_unmount.bmp"
